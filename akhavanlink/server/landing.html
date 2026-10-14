@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="author" content="Alireza Akhavan (علیرضا اخوان)">
+<title>AkhavanLink Server — ساخته‌شده توسط علیرضا اخوان</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%23070a14'/%3E%3Cpath d='M32 12 14 52M32 12 50 52M22 38h20' fill='none' stroke='%238d6bff' stroke-width='4.6' stroke-linecap='round'/%3E%3Cg fill='%23fff'%3E%3Ccircle cx='32' cy='12' r='4.8'/%3E%3Ccircle cx='14' cy='52' r='4.8'/%3E%3Ccircle cx='50' cy='52' r='4.8'/%3E%3C/g%3E%3C/svg%3E">
+<style>
+@property --hue{syntax:"<number>";inherits:true;initial-value:152}
+:root{--bg:#060914;--panel:#0b1224;--edge:#1b2744;--edge2:#2a3b66;--ink:#e9eeff;--mute:#8d99c0;--dim:#5b6894;--mint:#38f2a2;--coral:#ff5572;--hue:152;--glow:hsl(var(--hue) 100% 62%);
+ --font-d:"Bahnschrift SemiCondensed","Bahnschrift","Segoe UI",system-ui,sans-serif;--font-u:"Segoe UI Variable Text","Segoe UI",Tahoma,system-ui,sans-serif;--font-m:"Cascadia Mono",Consolas,"DejaVu Sans Mono",monospace}
+*{box-sizing:border-box;margin:0}
+body{min-height:100vh;display:grid;place-items:center;padding:28px 16px;color:var(--ink);font:15px/1.6 var(--font-u);-webkit-font-smoothing:antialiased;
+ background:radial-gradient(900px 600px at 50% 30%,hsl(var(--hue) 95% 50%/.14),transparent 66%),radial-gradient(700px 500px at 50% 115%,hsl(calc(var(--hue) + 60) 90% 56%/.10),transparent 70%),var(--bg)}
+.cut{--c:16px;position:relative;isolation:isolate;background:var(--edge);clip-path:polygon(var(--c) 0,100% 0,100% calc(100% - var(--c)),calc(100% - var(--c)) 100%,0 100%,0 var(--c))}
+.cut::before{content:"";position:absolute;inset:1px;z-index:-1;background:var(--panel);clip-path:polygon(calc(var(--c) - .5px) 0,100% 0,100% calc(100% - var(--c) + .5px),calc(100% - var(--c) + .5px) 100%,0 100%,0 calc(var(--c) - .5px))}
+main{width:min(760px,100%);padding:26px 28px 22px}
+header{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.mark{width:54px;height:54px;filter:drop-shadow(0 0 12px hsl(var(--hue) 100% 60%/.6))}
+h1{font:700 34px/1 var(--font-d);background:linear-gradient(90deg,#37dcff,#8d6bff,#ff4fd2,#ffb83d,#38f2a2,#37dcff);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:wave 7s linear infinite}
+@keyframes wave{to{background-position:200% 0}}
+.sub{color:var(--mute);font-size:13px}
+.status{margin-inline-start:auto;display:inline-flex;align-items:center;gap:9px;padding:7px 16px;font-weight:600;background:var(--edge);clip-path:polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%)}
+.led{width:9px;height:9px;border-radius:50%;background:var(--mint);box-shadow:0 0 0 3px rgba(56,242,162,.25),0 0 12px var(--mint);animation:pulse 2s ease-in-out infinite}
+.led.off{background:var(--coral);box-shadow:0 0 12px var(--coral);animation:none}
+@keyframes pulse{50%{opacity:.45}}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:24px 0 20px}
+.stat{padding:12px 14px;background:rgba(27,39,68,.55);clip-path:polygon(10px 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%,0 10px)}
+.stat b{display:block;font:600 34px/1.1 var(--font-d);font-variant-numeric:tabular-nums;text-shadow:0 0 22px hsl(var(--hue) 100% 60%/.5)}
+.stat span{color:var(--mute);font-size:12.5px}
+h2{font:600 13px var(--font-u);color:var(--mute);margin:22px 0 8px;display:flex;align-items:center;gap:8px}
+h2::before{content:"";width:14px;height:2px;background:var(--glow);box-shadow:0 0 8px var(--glow)}
+.addr{display:flex;gap:10px;align-items:stretch}
+code{flex:1;min-width:0;direction:ltr;text-align:left;padding:11px 14px;background:#070c1a;border:1px solid var(--edge2);font:500 15px var(--font-m);overflow-wrap:anywhere}
+button{font:600 14px var(--font-u);color:var(--ink);cursor:pointer;border:0;padding:0 22px;background:var(--edge);clip-path:polygon(10px 0,100% 0,calc(100% - 10px) 100%,0 100%);transition:filter .15s}
+button:hover{filter:brightness(1.25)} button.go{background:linear-gradient(100deg,var(--glow),hsl(calc(var(--hue) + 60) 100% 62%));color:#04101a}
+.test{display:flex;align-items:center;gap:14px;flex-wrap:wrap;min-height:42px}.test button{height:42px}
+#res{font-size:14px}.ok{color:var(--mint)}.bad{color:var(--coral)}
+ol{padding-inline-start:22px;display:grid;gap:7px;color:var(--ink)}ol li::marker{color:var(--glow);font-weight:700}ol small{display:block;color:var(--mute);direction:ltr;text-align:left;font-size:12.5px}
+footer{margin-top:24px;padding-top:14px;border-top:1px solid var(--edge);display:flex;gap:12px;flex-wrap:wrap;align-items:baseline;justify-content:space-between;color:var(--mute);font-size:13px}
+footer b{color:var(--ink);text-shadow:0 0 14px hsl(var(--hue) 100% 60%/.55)}footer i{font:500 13px var(--font-d);font-style:normal}
+@media(max-width:560px){.stats{grid-template-columns:1fr}.addr{flex-direction:column}button{height:42px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+</head>
+<body>
+<main class="cut">
+  <header>
+    <svg class="mark" viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#37dcff"/><stop offset=".55" stop-color="#8d6bff"/><stop offset="1" stop-color="#ff4fd2"/></linearGradient></defs><path d="M32 12 14 52M32 12 50 52M22 38h20" fill="none" stroke="url(#g)" stroke-width="4.8" stroke-linecap="round"/><g fill="#fff"><circle cx="32" cy="12" r="5"/><circle cx="14" cy="52" r="5"/><circle cx="50" cy="52" r="5"/></g></svg>
+    <div><h1>AkhavanLink</h1><div class="sub">سرور رلهٔ شبکهٔ LAN مجازی &nbsp;|&nbsp; Virtual LAN relay server</div></div>
+    <div class="status"><i class="led" id="led"></i><span id="st">آنلاین</span></div>
+  </header>
+
+  <div class="stats">
+    <div class="stat"><b id="sOnline">—</b><span>بازیکن آنلاین · players online</span></div>
+    <div class="stat"><b id="sNets">—</b><span>شبکهٔ فعال · active networks</span></div>
+    <div class="stat"><b id="sUp" dir="ltr">—</b><span>مدت روشن بودن · uptime</span></div>
+  </div>
+
+  <h2>آدرس سرور برای برنامه · Server address for the app</h2>
+  <div class="addr"><code id="wsurl">…</code><button class="go" id="copy" type="button">کپی · Copy</button></div>
+
+  <h2>تست اتصال WebSocket · WebSocket test</h2>
+  <div class="test"><button id="test" type="button">شروع تست · Run test</button><span id="res"></span></div>
+
+  <h2>راه‌اندازی · How to use</h2>
+  <ol>
+    <li>آدرس بالا رو توی برنامه (تنظیمات ← آدرس سرور) بذار، یا فقط <span dir="ltr"><b id="host">…</b></span> رو وارد کن.<small>Paste the address above into the app: Settings → Server address.</small></li>
+    <li>همهٔ دوستات «نام شبکه» و «رمز» یکسان بذارن و Connect بزنن.<small>Everyone uses the same network name and password, then presses Connect.</small></li>
+    <li>آی‌پی مجازی هر نفر توی لیست بازیکن‌های برنامه دیده می‌شه؛ توی بازی اون رو وارد کنید.<small>Each player's virtual IP is shown in the app's players list - use it in the game.</small></li>
+  </ol>
+
+  <footer>
+    <span>ساخته‌شده توسط <b>__CREATOR_FA__</b> &nbsp; <i>Created by __CREATOR__</i></span>
+    <i dir="ltr">AkhavanLink Server v__VERSION__ · protocol __PROTO__</i>
+  </footer>
+</main>
+<script>
+(() => {
+  const $ = (id) => document.getElementById(id);
+  const secure = location.protocol === 'https:';
+  const wsurl = (secure ? 'wss://' : 'ws://') + location.host + '/ws';
+  $('wsurl').textContent = wsurl; $('host').textContent = location.host;
+  const fmt = (s) => { const d = Math.floor(s / 86400), h = Math.floor(s / 3600) % 24, m = Math.floor(s / 60) % 60; return (d ? d + 'd ' : '') + String(h).padStart(2, '0') + ':' + String(m).padStart(2, '0') + ':' + String(s % 60).padStart(2, '0'); };
+  async function poll() {
+    try {
+      const r = await fetch('/api/stats', { cache: 'no-store' }); const j = await r.json();
+      $('sOnline').textContent = j.online; $('sNets').textContent = j.networks; $('sUp').textContent = fmt(j.uptime);
+      $('led').className = 'led'; $('st').textContent = 'آنلاین';
+    } catch (e) { $('led').className = 'led off'; $('st').textContent = 'قطع'; }
+  }
+  poll(); setInterval(poll, 4000);
+  $('copy').onclick = async () => { try { await navigator.clipboard.writeText(wsurl); } catch (e) { const t = document.createElement('textarea'); t.value = wsurl; document.body.appendChild(t); t.select(); document.execCommand('copy'); t.remove(); } $('copy').textContent = 'کپی شد ✓'; setTimeout(() => { $('copy').textContent = 'کپی · Copy'; }, 1400); };
+  $('test').onclick = () => {
+    const res = $('res'); res.className = ''; res.textContent = '…';
+    let ws; try { ws = new WebSocket(wsurl); } catch (e) { res.className = 'bad'; res.textContent = '✕ ' + e.message; return; }
+    const rtts = []; let sent = 0, hello = null, done = false;
+    const ping = () => { sent = performance.now(); ws.send(JSON.stringify({ t: 'ping', n: rtts.length + 1 })); };
+    const fail = (m) => { if (done) return; done = true; res.className = 'bad'; res.textContent = '✕ ' + m; try { ws.close(); } catch (e) {} };
+    const timer = setTimeout(() => fail('timeout - اتصال برقرار نشد یا WebSocket روی این هاستینگ فعال نیست'), 9000);
+    ws.onerror = () => fail('WebSocket error');
+    ws.onclose = () => { if (!done) fail('closed'); };
+    ws.onmessage = (ev) => {
+      const m = JSON.parse(ev.data);
+      if (m.t === 'hello') { hello = m; ping(); }
+      else if (m.t === 'pong') { rtts.push(performance.now() - sent); if (rtts.length < 5) ping(); else { done = true; clearTimeout(timer); ws.close(); const best = Math.min(...rtts.slice(1)); res.className = 'ok'; res.textContent = '✓ WebSocket OK · ' + hello.app + ' v' + hello.ver + ' · ping ' + Math.round(best) + ' ms'; } }
+    };
+  };
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+AkhavanLink — Virtual LAN for gamers
+Created by Alireza Akhavan (علیرضا اخوان)
+
+Third-party component (Windows client): Wintun virtual network driver,
+Copyright (C) WireGuard LLC - https://www.wintun.net - distributed under its own prebuilt-binaries license.

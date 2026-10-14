@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="fa" dir="rtl" data-state="idle" data-fx="full">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#060914">
+<meta name="author" content="Alireza Akhavan (علیرضا اخوان)">
+<title>AkhavanLink — ساخته‌شده توسط علیرضا اخوان</title>
+<link rel="icon" href="icon.png" type="image/png" sizes="256x256">
+<link rel="icon" href="logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="gMark" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#37dcff"/><stop offset=".55" stop-color="#8d6bff"/><stop offset="1" stop-color="#ff4fd2"/></linearGradient>
+    <symbol id="i-power" viewBox="0 0 24 24"><path d="M12 3v8"/><path d="M6.3 6.8a8 8 0 1 0 11.4 0"/></symbol>
+    <symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 6h8M18 6h2M4 12h2M12 12h8M4 18h10M20 18h0"/><circle cx="15" cy="6" r="2.2"/><circle cx="9" cy="12" r="2.2"/><circle cx="17" cy="18" r="2.2"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.6v.01"/></symbol>
+    <symbol id="i-term" viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="15" rx="2"/><path d="M7 10l3 2.5L7 15M12.5 15H17"/></symbol>
+    <symbol id="i-sound" viewBox="0 0 24 24"><path d="M4 9.5v5h3.5L12 18.5v-13L7.5 9.5H4z"/><path d="M15.5 9.2c1.4 1.5 1.4 4.1 0 5.6M18.2 6.6c2.8 3 2.8 7.8 0 10.8"/></symbol>
+    <symbol id="i-mute" viewBox="0 0 24 24"><path d="M4 9.5v5h3.5L12 18.5v-13L7.5 9.5H4z"/><path d="M16 9.5l5 5M21 9.5l-5 5"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3.2 3.2 3.2 14.8 0 18M12 3c-3.2 3.2-3.2 14.8 0 18"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8.5" y="8.5" width="11.5" height="11.5" rx="2"/><path d="M15.5 8.5V6.5a2 2 0 0 0-2-2h-7a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h2"/></symbol>
+    <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 19V5M6 10.5 12 5l6 5.5"/></symbol>
+    <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 5v14M6 13.5 12 19l6-5.5"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="2.8"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 4 2.8 19.5h18.4L12 4z"/><path d="M12 10v4.5M12 17.2v.01"/></symbol>
+  </defs>
+</svg>
+
+<div id="splash" class="splash">
+  <div class="splash-in">
+    <svg class="splash-mark" viewBox="0 0 64 64" aria-hidden="true">
+      <path class="draw" d="M32 12 14 52M32 12 50 52M22 38h20" fill="none" stroke="url(#gMark)" stroke-width="4.6" stroke-linecap="round" stroke-linejoin="round"/>
+      <g fill="#fff"><circle class="dot d1" cx="32" cy="12" r="4.8"/><circle class="dot d2" cx="14" cy="52" r="4.8"/><circle class="dot d3" cx="50" cy="52" r="4.8"/></g>
+    </svg>
+    <div class="splash-word rgb-text">AkhavanLink</div>
+    <div class="splash-by"><span data-i18n="createdBy">ساخته‌شده توسط</span> <b>علیرضا اخوان</b></div>
+    <div class="splash-by en">Created by Alireza Akhavan</div>
+    <div class="splash-bar"><i></i></div>
+  </div>
+</div>
+
+<div id="lost" class="lost" hidden><div class="cut"><b data-i18n="lostCore">ارتباط با هستهٔ برنامه قطع شد…</b></div></div>
+
+<div id="app" class="app">
+  <header class="bar">
+    <div class="brand">
+      <svg class="mark" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 12 14 52M32 12 50 52M22 38h20" fill="none" stroke="url(#gMark)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><g fill="#fff"><circle cx="32" cy="12" r="5"/><circle cx="14" cy="52" r="5"/><circle cx="50" cy="52" r="5"/></g></svg>
+      <div class="word"><b class="rgb-text">AkhavanLink</b><small data-i18n="tagline">شبکهٔ LAN مجازی برای گیمرها</small></div>
+    </div>
+    <div class="chip cut" id="chip"><i class="led"></i><span id="chipText">—</span></div>
+    <nav class="tools">
+      <button id="btnLang" class="tool cut" type="button" data-i18n-title="language"><svg class="ic"><use href="#i-globe"/></svg><span id="langTxt">EN</span></button>
+      <button id="btnSound" class="tool cut" type="button" data-i18n-title="sound"><svg class="ic"><use href="#i-sound"/></svg></button>
+      <button id="btnLog" class="tool cut" type="button" data-i18n-title="logs"><svg class="ic"><use href="#i-term"/></svg></button>
+      <button id="btnSettings" class="tool cut" type="button" data-i18n-title="settings"><svg class="ic"><use href="#i-sliders"/></svg></button>
+      <button id="btnAbout" class="tool cut" type="button" data-i18n-title="about"><svg class="ic"><use href="#i-info"/></svg></button>
+    </nav>
+  </header>
+
+  <div id="notice" class="notice cut" hidden>
+    <svg class="ic"><use href="#i-alert"/></svg>
+    <div class="ntext"><b id="noticeTitle"></b><span id="noticeText"></span><small id="noticeDetail" dir="ltr"></small></div>
+    <div class="nact" id="noticeActs"></div>
+  </div>
+
+  <main class="deck">
+    <section class="panel cut link" aria-labelledby="hLink">
+      <h2 id="hLink" data-i18n="linkQuality">کیفیت اتصال</h2>
+      <div class="ping-big"><b id="pingNum">—</b><small>ms</small></div>
+      <div class="sub" data-i18n="pingServer">پینگ تا سرور</div>
+      <canvas id="trace" class="trace"></canvas>
+      <dl class="kv">
+        <div><dt data-i18n="jitter">نوسان</dt><dd id="jitter" dir="ltr">—</dd></div>
+        <div><dt data-i18n="loss">افت بسته</dt><dd id="loss" dir="ltr">—</dd></div>
+        <div><dt><svg class="ic sm"><use href="#i-up"/></svg><span data-i18n="up">ارسال</span></dt><dd id="up" dir="ltr">—</dd></div>
+        <div><dt><svg class="ic sm"><use href="#i-down"/></svg><span data-i18n="down">دریافت</span></dt><dd id="down" dir="ltr">—</dd></div>
+        <div><dt data-i18n="uptime">مدت اتصال</dt><dd id="uptime" dir="ltr">—</dd></div>
+        <div><dt data-i18n="packets">بسته‌ها</dt><dd id="pkts" dir="ltr">—</dd></div>
+      </dl>
+    </section>
+
+    <section class="stage" id="stage" data-state="idle">
+      <canvas id="cables" class="cables"></canvas>
+      <div id="nodes" class="nodes"></div>
+      <div class="orb" id="orb">
+        <canvas id="ringBloom" class="ring bloom"></canvas>
+        <canvas id="ringSharp" class="ring"></canvas>
+        <button id="btnConnect" class="core" type="button">
+          <svg class="ic big"><use href="#i-power"/></svg>
+          <span id="coreLabel" class="core-label"></span>
+          <span id="coreSub" class="core-sub"></span>
+        </button>
+      </div>
+      <div class="readout" id="readout">
+        <div class="hint" id="hint"></div>
+        <div class="ipbox" id="ipBox" hidden>
+          <span class="ip-label" data-i18n="yourIp">آی‌پی مجازی تو</span>
+          <button class="ip" id="ipText" type="button" dir="ltr">0.0.0.0</button>
+        </div>
+        <div class="chips"><span class="mini" id="netChip"></span><span class="mini" id="srvChip" dir="ltr"></span></div>
+      </div>
+    </section>
+
+    <section class="panel cut players" aria-labelledby="hPlayers">
+      <h2 id="hPlayers"><span data-i18n="players">بازیکن‌ها</span><em id="count">0</em></h2>
+      <ul id="plist" class="plist"></ul>
+      <p id="pempty" class="pempty" data-i18n="noPlayers">هنوز کسی نیست.</p>
+    </section>
+  </main>
+
+  <footer class="dock">
+    <div class="ticker"><span id="tick">…</span></div>
+    <div class="credit"><span data-i18n="createdBy">ساخته‌شده توسط</span> <b>علیرضا اخوان</b><i dir="ltr">Alireza Akhavan</i></div>
+    <div class="ver" id="ver" dir="ltr"></div>
+  </footer>
+
+  <section id="console" class="console cut" hidden>
+    <header><b data-i18n="logs">گزارش‌ها</b><span class="grow"></span><button id="btnOpenLog" class="linkbtn" type="button" data-i18n="openLog">پوشهٔ گزارش</button><button id="btnCloseLog" class="x" type="button" aria-label="close"><svg class="ic"><use href="#i-x"/></svg></button></header>
+    <div id="logbox" class="logbox" dir="ltr"></div>
+  </section>
+</div>
+
+<div id="mSettings" class="modal" hidden>
+  <div class="sheet cut" role="dialog" aria-modal="true" aria-labelledby="tSettings">
+    <header><h3 id="tSettings" data-i18n="settings">تنظیمات</h3><button class="x" type="button" data-close aria-label="close"><svg class="ic"><use href="#i-x"/></svg></button></header>
+    <div class="form">
+      <label class="f wide"><span data-i18n="fServer">آدرس سرور</span><input id="fServer" dir="ltr" placeholder="my-app.deplexo.app" spellcheck="false" autocomplete="off"><small data-i18n="hServer"></small></label>
+      <div class="f wide testrow"><button id="btnTest" class="btn ghost" type="button" data-i18n="test">تست سرور</button><span id="testRes" class="testres"></span></div>
+      <label class="f"><span data-i18n="fNetwork">نام شبکه</span><input id="fNetwork" maxlength="32" autocomplete="off"></label>
+      <label class="f pw"><span data-i18n="fPassword">رمز شبکه</span><input id="fPassword" type="password" maxlength="64" autocomplete="off"><button id="btnEye" class="eye" type="button" tabindex="-1" aria-label="show"><svg class="ic"><use href="#i-eye"/></svg></button></label>
+      <label class="f"><span data-i18n="fNick">نام نمایشی</span><input id="fNick" maxlength="24" autocomplete="off"></label>
+      <label class="f"><span data-i18n="fKey">کلید دسترسی سرور</span><input id="fKey" type="password" dir="ltr" maxlength="128" autocomplete="off"></label>
+      <div class="toggles wide">
+        <label class="tg"><input type="checkbox" id="fAuto"><i></i><span data-i18n="fAuto"></span></label>
+        <label class="tg"><input type="checkbox" id="fFirewall"><i></i><span data-i18n="fFirewall"></span></label>
+        <label class="tg"><input type="checkbox" id="fSound"><i></i><span data-i18n="fSound"></span></label>
+        <label class="tg"><input type="checkbox" id="fLite"><i></i><span data-i18n="fLite"></span></label>
+      </div>
+      <details class="adv wide"><summary data-i18n="advanced">تنظیمات پیشرفته</summary>
+        <div class="advgrid">
+          <label class="f"><span data-i18n="fProxy">پروکسی HTTP</span><input id="fProxy" dir="ltr" placeholder="http://127.0.0.1:10809" spellcheck="false"></label>
+          <label class="f"><span>MTU</span><input id="fMtu" type="number" min="1200" max="1500" dir="ltr"></label>
+        </div>
+      </details>
+    </div>
+    <footer><button class="btn ghost" type="button" data-close data-i18n="close">بستن</button><button id="btnSave" class="btn primary" type="button" data-i18n="save">ذخیره</button></footer>
+  </div>
+</div>
+
+<div id="mAbout" class="modal" hidden>
+  <div class="sheet cut about" role="dialog" aria-modal="true" aria-labelledby="tAbout">
+    <header><h3 id="tAbout" data-i18n="about">درباره</h3><button class="x" type="button" data-close aria-label="close"><svg class="ic"><use href="#i-x"/></svg></button></header>
+    <div class="about-body">
+      <svg class="about-mark" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 12 14 52M32 12 50 52M22 38h20" fill="none" stroke="url(#gMark)" stroke-width="4.6" stroke-linecap="round" stroke-linejoin="round"/><g fill="#fff"><circle cx="32" cy="12" r="4.8"/><circle cx="14" cy="52" r="4.8"/><circle cx="50" cy="52" r="4.8"/></g></svg>
+      <h4 class="rgb-text">AkhavanLink</h4>
+      <p class="muted" id="aboutVer" dir="ltr"></p>
+      <p data-i18n="aboutText"></p>
+      <div class="byline"><span data-i18n="createdBy">ساخته‌شده توسط</span><b>علیرضا اخوان</b><i dir="ltr">Alireza Akhavan</i></div>
+      <ol class="how" id="how"></ol>
+    </div>
+  </div>
+</div>
+
+<div id="toasts" class="toasts" aria-live="polite"></div>
+<script src="app.js"></script>
+</body>
+</html>
